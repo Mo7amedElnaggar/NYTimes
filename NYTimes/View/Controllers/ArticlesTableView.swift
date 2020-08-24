@@ -26,14 +26,26 @@ class ArticlesTableView: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
          // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
+    // Transitioning Between ViewControllers
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.segueIdFordetailedArt {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let article = mostPopularArticles?.articles[indexPath.row]
+                
+                if let destVC = segue.destination as? ArticleDetailedVC {
+                    destVC.article = article
+                    destVC.navigationItem.leftItemsSupplementBackButton = true
+                }
+            }
+        }
+    }
+    
 }
 
-// MARK: - TableView DataSource
+// MARK: - TableView DataSource , Delegates
 extension ArticlesTableView {
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let articles = mostPopularArticles?.articles else { return 0 }
@@ -53,6 +65,10 @@ extension ArticlesTableView {
         cell.setArticlePhoto(for: article?.media.first?.mediaMetadata.first?.url)
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Constants.segueIdFordetailedArt, sender: nil)
     }
 }
 

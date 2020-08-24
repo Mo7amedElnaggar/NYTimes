@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W50-HN-hIT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Cww-dO-8Mb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W50-HN-hIT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SIt-Kc-BLw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ysb-zp-lFe" kind="relationship" relationship="rootViewController" id="HBd-nZ-ycs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMU-rb-RDZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
+        </scene>
+        <!--NYTimes Articles-->
+        <scene sceneID="ah3-lm-stf">
+            <objects>
+                <tableViewController id="Ysb-zp-lFe" customClass="ArticlesTableView" customModule="NYTimes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zty-Ou-qG9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MostPopularArticleCell" rowHeight="160" id="a1v-6d-Dyl" customClass="MostPopularArticleCell" customModule="NYTimes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a1v-6d-Dyl" id="lmW-l4-5ca">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2by-o0-2Sl">
+                                            <rect key="frame" x="10" y="10" width="394" height="140"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mDx-et-uEX" customClass="ArticlePhoto" customModule="NYTimes" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="MtW-A6-WV2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="flM-w2-TPC">
+                                                    <rect key="frame" x="140" y="8.5" width="254" height="123"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$300 Unemployment Benefit: Who Will Get It and When?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-k5-C73">
+                                                            <rect key="frame" x="0.0" y="0.0" width="230.5" height="41"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published By: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIP-Z6-vBR">
+                                                            <rect key="frame" x="0.0" y="41" width="97.5" height="41"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posted on : 20 - 8 - 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix0-7B-qTs">
+                                                            <rect key="frame" x="0.0" y="82" width="184.5" height="41"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.1552940854" green="0.3050323063" blue="0.4371430838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2by-o0-2Sl" firstAttribute="top" secondItem="lmW-l4-5ca" secondAttribute="top" constant="10" id="0Rx-Gb-dS5"/>
+                                        <constraint firstAttribute="trailing" secondItem="2by-o0-2Sl" secondAttribute="trailing" constant="10" id="W8V-vt-o3n"/>
+                                        <constraint firstItem="2by-o0-2Sl" firstAttribute="leading" secondItem="lmW-l4-5ca" secondAttribute="leading" constant="10" id="l6e-wD-bUc"/>
+                                        <constraint firstAttribute="bottom" secondItem="2by-o0-2Sl" secondAttribute="bottom" constant="10" id="xh0-t3-Oth"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="datePosted" destination="ix0-7B-qTs" id="de0-T5-7l6"/>
+                                    <outlet property="photo" destination="mDx-et-uEX" id="0ml-vG-hvV"/>
+                                    <outlet property="publishedBy" destination="CIP-Z6-vBR" id="b3N-ZC-Vaa"/>
+                                    <outlet property="title" destination="ziY-k5-C73" id="kRi-Z6-pKA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ysb-zp-lFe" id="CQP-X1-Rx4"/>
+                            <outlet property="delegate" destination="Ysb-zp-lFe" id="GYg-4O-6MD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="NYTimes Articles" id="4qm-80-4te"/>
+                    <connections>
+                        <segue destination="GaK-6G-hh7" kind="show" identifier="ArticleDetails" id="ZUY-L7-iUO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nY4-B8-7Ee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055.072463768116" y="101.78571428571428"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="obc-WF-ZZS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="79L-RY-dWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="GaK-6G-hh7" customClass="ArticleDetailedVC" customModule="NYTimes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D2q-CP-ulK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2n-ke-JGL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qk1-ls-tWi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="440.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hUa-p0-JaX">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="9tE-Yh-Xu0"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$300 Unemployment Benefit: Who Will Get It and When?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9es-cR-nbD">
+                                                <rect key="frame" x="20" y="170" width="374" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4I-MF-vgQ">
+                                                <rect key="frame" x="20" y="263" width="374" height="81.5"/>
+                                                <string key="text">$300 Unemployment Benefit: Who Will Get It and When? $300 Unemployment Benefit: Who Will Get It and When?$300 Unemployment Benefit: Who Will Get It and When?</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posted on : 20 - 8 - 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9h-JX-07T">
+                                                <rect key="frame" x="20" y="223" width="185" height="20"/>
+                                                <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="0.51764705879999995" alpha="0.10196382705479452" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.1552940854" green="0.3050323063" blue="0.4371430838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published By: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqT-MU-0vw">
+                                                <rect key="frame" x="20" y="374.5" width="374" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.4342877538071066" green="0.11500242667978747" blue="0.10054472734611541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohamed El-Naggar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvx-oE-WlQ">
+                                                <rect key="frame" x="20" y="402.5" width="374" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="S9h-JX-07T" firstAttribute="leading" secondItem="qk1-ls-tWi" secondAttribute="leading" constant="20" id="6Pa-99-sId"/>
+                                            <constraint firstItem="XqT-MU-0vw" firstAttribute="leading" secondItem="qk1-ls-tWi" secondAttribute="leading" constant="20" id="7zX-dv-jkq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dvx-oE-WlQ" secondAttribute="trailing" constant="20" id="8mr-cZ-Esg"/>
+                                            <constraint firstItem="S9h-JX-07T" firstAttribute="top" secondItem="9es-cR-nbD" secondAttribute="bottom" constant="12" id="9LP-hE-sUq"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="S9h-JX-07T" secondAttribute="trailing" constant="20" id="Hag-Sg-v4u"/>
+                                            <constraint firstItem="Dvx-oE-WlQ" firstAttribute="leading" secondItem="qk1-ls-tWi" secondAttribute="leading" constant="20" id="Pli-GQ-ViV"/>
+                                            <constraint firstItem="XqT-MU-0vw" firstAttribute="top" secondItem="t4I-MF-vgQ" secondAttribute="bottom" constant="30" id="X4j-NR-LEf"/>
+                                            <constraint firstAttribute="trailing" secondItem="XqT-MU-0vw" secondAttribute="trailing" constant="20" id="XWe-CC-EhA"/>
+                                            <constraint firstItem="hUa-p0-JaX" firstAttribute="leading" secondItem="qk1-ls-tWi" secondAttribute="leading" id="bCH-de-DCH"/>
+                                            <constraint firstItem="t4I-MF-vgQ" firstAttribute="top" secondItem="S9h-JX-07T" secondAttribute="bottom" constant="20" id="blq-h8-T8J"/>
+                                            <constraint firstAttribute="trailing" secondItem="hUa-p0-JaX" secondAttribute="trailing" id="d1t-Je-zlR"/>
+                                            <constraint firstAttribute="trailing" secondItem="9es-cR-nbD" secondAttribute="trailing" constant="20" id="gD6-Hu-cSi"/>
+                                            <constraint firstItem="hUa-p0-JaX" firstAttribute="top" secondItem="qk1-ls-tWi" secondAttribute="top" id="haS-1b-SAL"/>
+                                            <constraint firstItem="9es-cR-nbD" firstAttribute="top" secondItem="hUa-p0-JaX" secondAttribute="bottom" constant="20" id="qN1-Eh-cnb"/>
+                                            <constraint firstItem="t4I-MF-vgQ" firstAttribute="leading" secondItem="9es-cR-nbD" secondAttribute="leading" id="qQm-Gz-YmE"/>
+                                            <constraint firstItem="t4I-MF-vgQ" firstAttribute="trailing" secondItem="9es-cR-nbD" secondAttribute="trailing" id="tIB-uR-Fxx"/>
+                                            <constraint firstItem="Dvx-oE-WlQ" firstAttribute="top" secondItem="XqT-MU-0vw" secondAttribute="bottom" constant="10" id="vel-X0-Z5d"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dvx-oE-WlQ" secondAttribute="bottom" constant="20" id="wiy-dz-fnD"/>
+                                            <constraint firstItem="9es-cR-nbD" firstAttribute="leading" secondItem="qk1-ls-tWi" secondAttribute="leading" constant="20" id="xfk-TZ-L2R"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qk1-ls-tWi" secondAttribute="trailing" id="Fwr-J6-4te"/>
+                                    <constraint firstAttribute="bottom" secondItem="qk1-ls-tWi" secondAttribute="bottom" constant="20" id="c4f-lP-WGK"/>
+                                    <constraint firstItem="qk1-ls-tWi" firstAttribute="leading" secondItem="f2n-ke-JGL" secondAttribute="leading" id="cgs-lg-Ybj"/>
+                                    <constraint firstItem="qk1-ls-tWi" firstAttribute="top" secondItem="f2n-ke-JGL" secondAttribute="top" id="dn1-tl-mto"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVC-Gq-XrB">
+                                <rect key="frame" x="0.0" y="821.5" width="414" height="40.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ The New York Times" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RH-ff-yWa">
+                                        <rect key="frame" x="10" y="10" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2RH-ff-yWa" firstAttribute="leading" secondItem="VVC-Gq-XrB" secondAttribute="leading" constant="10" id="FqO-GD-9Db"/>
+                                    <constraint firstItem="2RH-ff-yWa" firstAttribute="top" secondItem="VVC-Gq-XrB" secondAttribute="top" constant="10" id="dHt-YB-0ze"/>
+                                    <constraint firstAttribute="trailing" secondItem="2RH-ff-yWa" secondAttribute="trailing" constant="10" id="u2G-bq-XE8"/>
+                                    <constraint firstAttribute="bottom" secondItem="2RH-ff-yWa" secondAttribute="bottom" constant="10" id="ubU-En-Va3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="f2n-ke-JGL" firstAttribute="bottom" secondItem="yQx-HC-gq6" secondAttribute="bottom" id="988-00-xY0"/>
+                            <constraint firstItem="qk1-ls-tWi" firstAttribute="width" secondItem="D2q-CP-ulK" secondAttribute="width" id="DYN-2d-2ef"/>
+                            <constraint firstItem="VVC-Gq-XrB" firstAttribute="leading" secondItem="yQx-HC-gq6" secondAttribute="leading" id="EbT-e7-QZQ"/>
+                            <constraint firstItem="yQx-HC-gq6" firstAttribute="trailing" secondItem="VVC-Gq-XrB" secondAttribute="trailing" id="Fop-9J-IR4"/>
+                            <constraint firstItem="f2n-ke-JGL" firstAttribute="leading" secondItem="yQx-HC-gq6" secondAttribute="leading" id="GMJ-AV-gkU"/>
+                            <constraint firstItem="f2n-ke-JGL" firstAttribute="top" secondItem="yQx-HC-gq6" secondAttribute="top" id="HlN-PP-9wI"/>
+                            <constraint firstItem="VVC-Gq-XrB" firstAttribute="bottom" secondItem="yQx-HC-gq6" secondAttribute="bottom" id="vTv-fh-qJV"/>
+                            <constraint firstItem="f2n-ke-JGL" firstAttribute="trailing" secondItem="yQx-HC-gq6" secondAttribute="trailing" id="y2X-HP-AG9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yQx-HC-gq6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="6rT-JG-sRz">
+                        <barButtonItem key="backBarButtonItem" title="&lt;" id="fL1-Ve-CvP"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="articleAbstractLbl" destination="t4I-MF-vgQ" id="keO-K8-lxT"/>
+                        <outlet property="articlePhoto" destination="hUa-p0-JaX" id="L9Z-hN-3FP"/>
+                        <outlet property="articleTitleLbl" destination="9es-cR-nbD" id="yTN-pr-yBn"/>
+                        <outlet property="copyRightReservedLbl" destination="2RH-ff-yWa" id="oLi-ED-vt9"/>
+                        <outlet property="publisherLbl" destination="Dvx-oE-WlQ" id="oe4-E6-RvU"/>
+                        <outlet property="publishingDateLbl" destination="S9h-JX-07T" id="7Wq-X0-Fjz"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2128.985507246377" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+</document>
