@@ -11,6 +11,8 @@ import Foundation
 class Network {
     static let shared = Network()
     private let session: URLSession = URLSession.shared
+
+    private init() {}
     
     func dataTask(url: URL, completion: @escaping (Result<(Data?, HTTPURLResponse), Error>) -> Void) {
         session.dataTask(with: url) { data, response, error in

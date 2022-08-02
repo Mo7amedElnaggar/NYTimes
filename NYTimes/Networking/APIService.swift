@@ -14,8 +14,10 @@ typealias FailureBlock = ((Error) -> Void)
 class APIService {
     static let shared = APIService()
     
-    private let network: Network = Network()
+    private let network: Network = Network.shared
     private let baseURL: String = Constants.APIUrl
+    
+    private init() {}
 
     func getData<T: Decodable>(onSuccess: @escaping SuccessBlock<T> , onFailure: @escaping FailureBlock) {
         let urlString: String = baseURL + "?api-key=\(Constants.APIKey)"
