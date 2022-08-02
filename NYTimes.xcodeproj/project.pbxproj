@@ -71,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3437CB9C289932F400B6C7D4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				34FFF2A124F423EB00C13E6B /* AppDelegate.swift */,
+				34FFF2A324F423EB00C13E6B /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 		34FFF29524F423EA00C13E6B = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +99,7 @@
 		34FFF2A024F423EA00C13E6B /* NYTimes */ = {
 			isa = PBXGroup;
 			children = (
-				34FFF2A124F423EB00C13E6B /* AppDelegate.swift */,
-				34FFF2A324F423EB00C13E6B /* SceneDelegate.swift */,
+				3437CB9C289932F400B6C7D4 /* AppDelegate */,
 				34FFF2DD24F42F7800C13E6B /* Helper */,
 				34FFF2D224F42C4100C13E6B /* Networking */,
 				34FFF2BC24F427AC00C13E6B /* Model */,
