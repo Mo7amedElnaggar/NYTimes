@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ArticlesViewModelDelegate {
+protocol ArticlesViewModelDelegate: AnyObject {
     func didRecieveArticles(articles: MostPopularArticles)
     func didRecieveError(errMsg: String)
 }

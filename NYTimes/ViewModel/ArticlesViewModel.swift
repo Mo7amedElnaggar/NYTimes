@@ -10,7 +10,7 @@ import Foundation
 
 class ArticlesViewModel {
     
-    var delegate: ArticlesViewModelDelegate?
+    weak var delegate: ArticlesViewModelDelegate?
     var mostPopularArticles: MostPopularArticles?
     
     func fetchData() {
