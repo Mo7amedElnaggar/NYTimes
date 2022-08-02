@@ -11,25 +11,25 @@ import UIKit
 
 extension UIImageView {
     
-    func downloadImage(using imgString: String , onSuccess: @escaping () -> Void? , onFailure: @escaping (Error) -> Void?) {
+    func downloadImage(using imgString: String , onSuccess: (() -> Void)? = nil , onFailure: ((Error) -> Void)? = nil) {
         guard let url = URL(string: imgString) else { return }
         
         downloadImage(from: url, onSuccess: onSuccess, onFailure: onFailure)
     }
     
-    func downloadImage(from url: URL , onSuccess: @escaping () -> Void? , onFailure: @escaping (Error) -> Void?) {
+    func downloadImage(from url: URL , onSuccess: (() -> Void)? = nil, onFailure: ((Error) -> Void)? = nil) {
         
         Network.shared.dataTask(url: url) { (result) in
             switch(result) {
             case .failure(let err):
-                onFailure(err)
+                onFailure?(err)
             case .success(let (data, _)):
                 guard let data = data else { return }
                 let img = UIImage(data: data)
                 
                 DispatchQueue.main.async { [weak self] in
                     self?.image = img
-                    onSuccess()
+                    onSuccess?()
                 }
             }
         }

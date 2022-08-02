@@ -26,6 +26,14 @@ class MostPopularArticleCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.photo.image = nil
+        self.title.text = ""
+        self.publishedBy.text = ""
+        self.datePosted.text = ""
+    }
+    
     func setArticleTitle(for title: String?) {
         self.title?.text = title
     }
@@ -43,10 +51,6 @@ class MostPopularArticleCell: UITableViewCell {
     func setArticlePhoto(for imgUrl: String?) {
         guard let img = imgUrl , let url = URL(string: img) else { return }
         
-        photo.downloadImage(from: url, onSuccess: { () -> Void? in
-            print("\(url) downloaded successfully...")
-        }) { (err: Error) -> Void? in
-            assertionFailure(err.localizedDescription)
-        }
+        photo.downloadImage(from: url)
     }
 }

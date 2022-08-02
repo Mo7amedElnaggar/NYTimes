@@ -18,7 +18,6 @@ class ArticleDetailedVC: UIViewController {
     @IBOutlet weak var publisherLbl: UILabel!
     @IBOutlet weak var copyRightReservedLbl: UILabel!
     
-    
     // MARK: Variables
     var article: Article?
     
@@ -28,17 +27,12 @@ class ArticleDetailedVC: UIViewController {
         if let articleAdded = article {
             bindArticle(for: articleAdded)
         }
-
     }
     
     // MARK: Setup Article data
     private func bindArticle(for article: Article) {
         if let imgUrl = article.media.first?.mediaMetadata.first?.url {
-            self.articlePhoto.downloadImage(using: imgUrl, onSuccess: { () -> Void? in
-                print("DONE Downloading image")
-            }) { (err: Error) -> Void? in
-                assertionFailure(err.localizedDescription)
-            }
+            self.articlePhoto.downloadImage(using: imgUrl)
         }
         
         self.articleTitleLbl?.text = article.title

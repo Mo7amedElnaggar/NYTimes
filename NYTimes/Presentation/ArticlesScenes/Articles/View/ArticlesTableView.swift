@@ -10,7 +10,6 @@ import UIKit
 
 class ArticlesTableView: UITableViewController {
 
-    var mostPopularArticles: MostPopularArticles?
     var articlesViewModel: ArticlesViewModel?
     
     override func viewDidLoad() {
@@ -20,11 +19,7 @@ class ArticlesTableView: UITableViewController {
         articlesViewModel?.delegate = self
         articlesViewModel?.fetchData()
         
-        // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     
@@ -32,7 +27,7 @@ class ArticlesTableView: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.segueIdFordetailedArt {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let article = mostPopularArticles?.articles[indexPath.row]
+                let article = articlesViewModel?.articles?[indexPath.row]
                 
                 if let destVC = segue.destination as? ArticleDetailedVC {
                     destVC.article = article
@@ -48,7 +43,7 @@ class ArticlesTableView: UITableViewController {
 extension ArticlesTableView {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let articles = mostPopularArticles?.articles else { return 0 }
+        guard let articles = articlesViewModel?.articles else { return 0 }
         return articles.count
     }
     
@@ -57,7 +52,7 @@ extension ArticlesTableView {
             return UITableViewCell()
         }
 
-        let article = mostPopularArticles?.articles[indexPath.row]
+        let article = articlesViewModel?.articles?[indexPath.row]
         
         cell.setArticleTitle(for: article?.title)
         cell.setArticlePublisher(for: article?.byline)
@@ -75,8 +70,7 @@ extension ArticlesTableView {
 
 extension ArticlesTableView: ArticlesViewModelDelegate {
     
-    func didRecieveArticles(articles: MostPopularArticles) {
-        self.mostPopularArticles = articles
+    func didRecieveArticles() {
         self.tableView.reloadData()
     }
     
